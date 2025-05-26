@@ -4,12 +4,13 @@ import qiankun from 'vite-plugin-qiankun'
 import path from 'path'
 
 export default defineConfig({
-  base: '/', // 🚀 若部署到 CDN 路徑，可改成 '/sub-app-vue3/' 之類
+  // base: '/',
+  base: '/sub-app-vue3/',
   plugins: [
     vue(),
     qiankun('sub-app-vue3', {
-      // useDevMode: false, // 🛠️ 生產模式部署時關閉 dev mode
-      useDevMode: true, // 🛠️ 生產模式部署時關閉 dev mode
+      useDevMode: false, 
+      // useDevMode: true, 
     }),
   ],
   resolve: {
@@ -23,7 +24,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       output: {
-        format: 'umd', // 🔧 讓主應用能正確識別
+        format: 'umd', 
         name: 'subAppVue3',
         globals: {
           vue: 'Vue',

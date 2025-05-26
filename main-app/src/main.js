@@ -13,7 +13,8 @@ app.mount('#app')
 registerMicroApps([
     {
         name: 'sub-app-vue3',
-        entry: '//localhost:5174',
+        // entry: '//localhost:5174',
+        entry: 'https://WuRocky.github.io/sub-app-vue3/',
         container: '#subapp-viewport',
         activeRule: '/sub',
     },
